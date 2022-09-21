@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet');
+
+body {
+    background: #3b2c01;
+    margin: 0;
+    font-family: 'Open Sans';
+ }
+.nav {
+    text-align: right;
+    padding: 2% 2%;
+}
+.nav a {
+   color: #ffe6a0;
+   font-size: 15px;
+   padding: 2%; 
+   text-decoration: none;
+}
+.about-me-text-container {
+   color: #f2e5bf;
+   font-size: 18px;
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-bottom: 5%;
+}
+.about-me-table th, td {
+   vertical-align: top;
+}
+.about-me-table td + td {
+   border-left:1px solid white;
+}
+.about-me-text {
+   vertical-align: top;
+   text-align: left;
+   width: 55%;
+   padding-right: 25px;
+}
+.relevant-classes, .lang, .hobbies {
+   vertical-align: top;
+   padding-left: 25px;
+}
+.home-text-container {
+   color: #f2e5bf;
+   position: absolute; 
+   width: 100%; 
+   height: 75%;
+   display: table;
+}
+.home-inner-container {
+   padding-left: 5%;
+   display: table-cell;
+   vertical-align: middle;
+   text-align: left;
+}
+.home-text {
+   display: inline-block;
+   text-align: left; 
+   font-size: 22px;
+   max-width: 50%; 
+   margin: auto;
+}
+.work-container {
+   color: #f2e5bf;
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-bottom: 5%;
+}
+.work-description {
+   vertical-align: top;
+   padding-right: 50px;
+}
+.work-heading {
+   text-align: left;
+}
+.work-1-media {
+   margin-top: 0%;
+   width: 350px;
+   height: auto;
+}
+.work-2-media {
+   margin-top: 0%;
+   height: 270px;
+   width: auto;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Sensor Study Companion PCB: Design & Build Process</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="nav">
+        <a href="index.html" class="nav">HOME</a>
+        <a href="about-me.html" class="nav">ABOUT ME</a>
+        <a href="work.html" class="nav">WORK</a>
+        <a href="files/YilanLiuResume.pdf" class="nav">RESUME</a>
+    </div>
+    <div class="work-container">
+        <table>
+            <tr>
+                <th colspan="2" class="work-heading">
+                    <h1>Light Sensor Study Companion PCB: Design & Build Process</h1>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="work-description">
+                        <h3>Light sensor mode</h1>
+                        I wired the light dependent resistor (LDR) to an analog input pin of the ATSAMD21G18 microcontroller,
+                        a red LED to a digital output pin, and a buzzer to a digital output pin.
+                        <br>
+                        <br>
+                        Logic in code: If the value coming in from the input pin connected to the LDR is less than or equal to a certain value, 
+                        I write a HIGH value to the digital pin connected to the red LED and also to the digital pin connected
+                        to the buzzer. Finally, I change the text of the OLED display to "turn on the light!".
+                    </div>
+                </td>
+                <td class="study-companion">
+                    <video class="work-3-media" controls> <source src="files/studycompanionPCB/lightsensordemo.mov" type="video/mp4">Your browser does not 
+                        support the video tag.
+                    </video>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="work-description">
+                        <h3>Productivity mode</h3>
+                        This part was really simple! 
+                        <br> 
+                        <br> 
+                        Logic in code: Once the button is pressed to change to this mode, I erase the existing text 
+                        on the OLED display and replace it with "PRODUCTIVITY MODE" followed by an encouraging message.
+                    </div>
+                </td>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="work-description">
+                        <h3>Mode button</h3>
+                        I wired the mode button to a digital input pin of the microcontroller and then enabled the internal pull-up in the code. 
+                        <br> 
+                        <br> 
+                        Logic in code: I keep a counter of how many times the button has been pressed by tracking the number of times
+                        input value changes from HIGH -> LOW and LOW -> HIGH and dividing by two (the division by two is because every time the button
+                        is pressed, there is a change from HIGH -> LOW and another one from LOW -> HIGH). Then, I mod the value 
+                        stored by the counter by two to tell me which mode should be displayed on the OLED display.
+                    </div>
+                </td>
+                <td class="study-companion">
+                    <video class="work-3-media" controls> <source src="files/studycompanionPCB/modebuttondemo.mov" type="video/mp4">Your browser does not 
+                        support the video tag.
+                    </video>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="work-description">
+                        <h3>Fixes</h3>
+                        There were so many fixes I had to do! Ironically though, the open heart surgeries I had to do on my board 
+                        turned out to be my favorite part of the project.
+                        <br>
+                        <br>
+                        To start, I made the rookie mistake of accidentally making two variable names for the 3.3V power source in the KiCad schematic: "+3V3" and "+3.3V",
+                        the latter of which was not connected to any power source. 
+                        Lucky for me, though -- I had a test pad that was connected to "+3.3V", so I just connected it to the 
+                        "+3V3" pad of the buzzer using an external wire.
+                        <br>
+                        <br> 
+                        Another mistake I made was connecting the mode button completely incorrectly in the KiCad schematic.
+                        From the datasheet, it's clear that when the button is pressed, pins 1, 3, and 4 short. However, I wired up
+                        pins 1 and 2 in the schematic (facepalm), and also neglected to add a pull-down nor pull-up resistor. I didn't 
+                        realize these mistakes until I had already soldered on the button, so here's what I did instead: I got as much solder as I 
+                        could off of pin 2 (which was connected to +3V3), pried the leg up, then connected pin 4 (previously floating) to the GND pin on the 
+                        Q1 NPN transistor using an external wire. Finally, I enabled the internal pull-up resistor in the Arduino code. 
+                        <br>
+                        <br>
+                        The third mistake I made was accidentally burning off the traces for the SCL and SDA lines of the OLED display. It was a simple fix, though -- 
+                        all I had to do was connect the SCL and SDA pins to the SCL and SDA pads of the two resistors connected in those same tracks using two 
+                        external wires.
+                        <br>
+                        <br> 
+                        The final fix I did was to remove the D4 diode, which was recommended in the datasheet of the buzzer to be placed in parallel with it. 
+                        When I had the diode in, the buzzer would make a quiet clicking sound instead of buzzing, and after debugging for a bit, 
+                        my TA and I concluded that it had to be the diode causing problems. We desoldered it, and the buzzer started working! Strange.
+                    </div>
+                </td>
+                <td class="study-companion">
+                    <picture>
+                        <img src="files/studycompanionPCB/fixes.jpg" class="work-4-media" alt="fixes on board">
+                    </picture>
+                    <picture>
+                        <img src="files/studycompanionPCB/fixeskicad.png" class="work-4-media" alt="fixes shown in pcb view on kicad">
+                    </picture>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>

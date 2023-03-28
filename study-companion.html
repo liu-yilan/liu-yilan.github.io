@@ -24,7 +24,10 @@
             <tr>
                 <td>
                     <div class="work-description">
-                        <h3>Light sensor mode</h1>
+                        <h3>Light sensor mode</h3>
+                        Objective: Shine red LED, sound buzzer, and display a reminder on the OLED display once the darkness in room reaches a certain level. 
+                        <br>
+                        <br>
                         I wired the light dependent resistor (LDR) to an analog input pin of the ATSAMD21G18 microcontroller,
                         a red LED to a digital output pin, and a buzzer to a digital output pin.
                         <br>
@@ -32,6 +35,10 @@
                         Logic in code: If the value coming in from the input pin connected to the LDR is less than or equal to a certain value, 
                         I write a HIGH value to the digital pin connected to the red LED and also to the digital pin connected
                         to the buzzer. Finally, I change the text of the OLED display to "turn on the light!".
+                        <br>
+                        <br>
+                        <br>
+                        <br>
                     </div>
                 </td>
                 <td class="study-companion">
@@ -44,6 +51,9 @@
                 <td>
                     <div class="work-description">
                         <h3>Productivity mode</h3>
+                        Objective: Display message of choice on OLED display.
+                        <br> 
+                        <br> 
                         This part was really simple! 
                         <br> 
                         <br> 
@@ -60,7 +70,7 @@
             <tr>
                 <td>
                     <div class="work-description">
-                        <h3>Mode button</h3>
+                        <h3>Mode button (allow change from Light Sensor Mode to Productivity Mode and vice versa)</h3>
                         I wired the mode button to a digital input pin of the microcontroller and then enabled the internal pull-up in the code. 
                         <br> 
                         <br> 

@@ -11,13 +11,13 @@ body {
 }
 .nav a {
    color: #ffe6a0;
-   font-size: 15px;
+   font-size: 17px;
    padding: 2%; 
    text-decoration: none;
 }
 .about-me-txt-container {
    color: #f2e5bf;
-   font-size: 18px;
+   font-size: 17px;
    margin-left: 20%;
    margin-right: 20%;
    margin-top: 10%;
@@ -68,6 +68,7 @@ body {
 .work-description {
    vertical-align: top;
    padding-right: 50px;
+   font-size: 17px;
 }
 .work-heading {
    text-align: left;

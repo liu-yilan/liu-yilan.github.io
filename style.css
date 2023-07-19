@@ -113,8 +113,11 @@ td.study-companion{
    .nav {
       text-align: center;
    }
-   .about-me-txt-container {
+   .nav a {
       font-size: 16px;
+   }
+   .about-me-txt-container {
+      font-size: 15px;
       text-align: center;
       margin-top: 10%;
       margin-bottom: 5%;

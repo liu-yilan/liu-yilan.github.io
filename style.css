@@ -109,7 +109,7 @@ td.study-companion{
    vertical-align: middle;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 950px) {
    .nav {
       text-align: center;
    }

@@ -15,7 +15,7 @@ body {
    padding: 2%; 
    text-decoration: none;
 }
-.about-me-txt-container {
+.body-txt {
    color: #f2e5bf;
    font-size: 17px;
    margin-left: 20%;
@@ -116,7 +116,7 @@ td.study-companion{
    .nav a {
       font-size: 15px;
    }
-   .about-me-txt-container {
+   .body-txt {
       font-size: 14px;
       text-align: center;
       margin-top: 10%;
